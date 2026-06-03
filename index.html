@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Shift Tracker Pro</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#080d17; --surface:#0e1624; --border:rgba(255,255,255,0.07); --cyan:#22d3ee; --green:#4ade80; --text:#e2e8f0; --text-muted:#64748b; --sans:'DM Sans',sans-serif; --mono:'IBM Plex Mono',monospace; --safe-bottom:env(safe-area-inset-bottom,0px); }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:var(--sans); background:var(--bg); color:var(--text); min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:32px 24px; padding-bottom:calc(32px + var(--safe-bottom)); }
+    body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(rgba(34,211,238,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(34,211,238,0.025) 1px,transparent 1px); background-size:32px 32px; pointer-events:none; }
+    .wrap { position:relative; z-index:1; width:100%; max-width:360px; display:flex; flex-direction:column; align-items:center; gap:32px; }
+    .logo { font-family:var(--mono); font-size:1rem; letter-spacing:3px; text-transform:uppercase; color:var(--cyan); }
+    .sub { font-size:0.9rem; color:var(--text-muted); text-align:center; }
+    .cards { display:flex; flex-direction:column; gap:12px; width:100%; }
+    .app-card { display:block; text-decoration:none; background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:20px; transition:border-color 0.2s; }
+    .app-card:active { border-color:var(--cyan); }
+    .app-card-icon { width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:12px; }
+    .icon-emp { background:rgba(34,211,238,0.1); }
+    .icon-mgr { background:rgba(74,222,128,0.1); }
+    .app-card-name { font-size:1.1rem; font-weight:600; color:var(--text); margin-bottom:4px; }
+    .app-card-desc { font-size:0.85rem; color:var(--text-muted); }
+    .arrow { margin-top:10px; font-family:var(--mono); font-size:0.8rem; color:var(--cyan); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="logo">Shift Tracker Pro</div>
+    <div class="sub">Select your portal to continue</div>
+    <div class="cards">
+      <a class="app-card" href="/employee/">
+        <div class="app-card-icon icon-emp">
+          <svg width="24" height="24" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>
+          </svg>
+        </div>
+        <div class="app-card-name">Employee App</div>
+        <div class="app-card-desc">Clock in, clock out, view your shifts and earnings</div>
+        <div class="arrow">Open &rarr;</div>
+      </a>
+      <a class="app-card" href="/manager/">
+        <div class="app-card-icon icon-mgr">
+          <svg width="24" height="24" fill="none" stroke="#4ade80" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24">
+            <rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 14h4M7 17h6"/>
+          </svg>
+        </div>
+        <div class="app-card-name">Manager App</div>
+        <div class="app-card-desc">View live shifts, approve timesheets, reports</div>
+        <div class="arrow">Open &rarr;</div>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
